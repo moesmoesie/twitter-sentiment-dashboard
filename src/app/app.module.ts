@@ -16,6 +16,7 @@ import { TweetCardComponent } from './components/tweet-card/tweet-card.component
 import { KeywordsContainerComponent } from './components/keywords-container/keywords-container.component';
 import { KeywordsCardComponent } from './components/keywords-card/keywords-card.component';
 import { MenuComponent } from './components/menu/menu.component';
+import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { MenuComponent } from './components/menu/menu.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    LayoutModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
