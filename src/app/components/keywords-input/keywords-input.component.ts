@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatChipInputEvent } from '@angular/material/chips/chip-input';
 import {COMMA, ENTER} from '@angular/cdk/keycodes';
+import { StoreService } from 'src/app/services/store/store.service';
 
 @Component({
   selector: 'keywords-input',
@@ -8,23 +9,18 @@ import {COMMA, ENTER} from '@angular/cdk/keycodes';
   styleUrls: ['./keywords-input.component.scss']
 })
 export class KeywordsInputComponent implements OnInit {
-  keywords = ["obama", "Covid19", "Mark Rutten"]
   readonly separatorKeysCodes = [ENTER];
 
   addKeyword(event: MatChipInputEvent){
     if(event.value){
-      this.keywords.push(event.value)
+      this.store.addKeyword(event.value)
     }
     event.chipInput!.clear()
   }
 
-  removeKeyword(index:number){
-    if(index > -1 && index < this.keywords.length){
-      this.keywords.splice(index, 1);
-    }
-  }
-
-  constructor() { }
+  constructor(
+    public store: StoreService 
+  ) { }
 
   ngOnInit(): void {
   }
