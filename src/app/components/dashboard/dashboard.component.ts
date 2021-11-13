@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GlobalService } from 'src/app/services/global.service';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'dashboard',
