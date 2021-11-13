@@ -1,5 +1,6 @@
-<div class="app-container">
-    <dashboard></dashboard>
-    <menu *ngIf="global.bigMode" class="menu"></menu>
-</div>
-
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer [opened]="global.bigMode" class="drawer" mode="side">
+      <p>Logo</p>
+    </mat-drawer>
+    <dashboard></dashboard>  
+</mat-drawer-container>

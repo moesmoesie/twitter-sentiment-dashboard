@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { GlobalService } from './services/global/global.service';
 
 @Component({

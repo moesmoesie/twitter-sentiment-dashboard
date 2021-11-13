@@ -11,7 +11,6 @@ import { LineChartCardComponent } from './components/line-chart-card/line-chart-
 import { BarChartCardComponent } from './components/bar-chart-card/bar-chart-card.component';
 import { TweetCardComponent } from './components/tweet-card/tweet-card.component';
 import { KeywordsInputComponent } from './components/keywords-input/keywords-input.component';
-import { MenuComponent } from './components/menu/menu.component';
 import {LayoutModule} from '@angular/cdk/layout';
 
 @NgModule({
@@ -23,7 +22,6 @@ import {LayoutModule} from '@angular/cdk/layout';
     BarChartCardComponent,
     TweetCardComponent,
     KeywordsInputComponent,
-    MenuComponent,
   ],
   imports: [
     BrowserModule,
