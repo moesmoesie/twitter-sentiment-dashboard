@@ -2,6 +2,9 @@
 
 .metrics-cards-container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
     gap: 2rem;
+}
+
+.metrics-cards-container--large{
+    grid-template-columns: 1fr 1fr 1fr;
 }

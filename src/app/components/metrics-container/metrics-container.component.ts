@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from 'src/app/services/global/global.service';
 
 @Component({
   selector: 'metrics-container',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MetricsContainerComponent implements OnInit {
 
-  constructor() { }
+  constructor(public global : GlobalService) { }
 
   ngOnInit(): void {
   }
