@@ -1,6 +1,43 @@
 <div class="dashboard-container" [class.space-for-menu]="global.bigMode">
-    <keywords-container></keywords-container>
-    <metrics-container></metrics-container>
-    <graphs-container></graphs-container>
-    <tweets-container></tweets-container>
+
+    <div class="keywords-c">
+        <h2 class="keywords-c__header">Keywords</h2>
+        <p class="keywords-c__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus sagittis ornare aenean nec in eget. Diam in ultrices vitae magna odio. Consequat, quis purus mi in. Fusce maecenas neque, et sit feugiat laoreet.</p>
+        <keywords-input></keywords-input>
+    </div>
+
+
+    <div>
+        <h2>Metrics</h2>
+        <div class="metrics-c"
+         [class.metrics-c--large]="global.bigMode" >
+            <metric-card></metric-card>
+            <metric-card></metric-card>
+            <metric-card></metric-card>
+        </div>
+    </div>
+   
+
+    <div class="graphs-c" [class.graphs-c--large]="global.bigMode">
+        <div>
+            <h2>Line Chart</h2>
+            <line-chart-card></line-chart-card>
+        </div>
+    
+        <div>
+            <h2>Bar Chart</h2>
+            <bar-chart-card></bar-chart-card>
+        </div>
+    </div>
+
+    <div>
+        <h2>Tweets</h2>
+        <div class="tweet-c">
+            <tweet-card></tweet-card>
+            <tweet-card></tweet-card>
+            <tweet-card></tweet-card>
+            <tweet-card></tweet-card>
+            <tweet-card></tweet-card>
+        </div>
+    </div>
 </div>

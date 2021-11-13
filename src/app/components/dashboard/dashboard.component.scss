@@ -10,3 +10,48 @@
 .space-for-menu{
     padding-left: 14rem;
 }
+
+.graphs-c{
+    display: grid;
+    gap: 2rem;
+    &--large{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.metrics-c{
+    display: grid;
+    gap: 2rem;
+
+    &--large{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.keywords-c{
+    display: grid;
+    gap: 1rem;
+
+    &__header{
+        margin: 0;
+    }
+
+    &__body{
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 60ch;
+        color: #999999;
+    }
+}
+
+
+
+
+
+.tweet-c{
+    display: grid;
+    gap: 2rem;
+}
