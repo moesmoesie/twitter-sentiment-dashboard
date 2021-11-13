@@ -1,0 +1,21 @@
+<mat-form-field class="keywords-form" appearance="outline">
+    <mat-label>Select Keywords</mat-label>
+    <mat-chip-list #keywordList aria-label="Fruit selection">
+      <mat-chip *ngFor="let keyword of keywords let i = index" 
+        [attr.data-index]="i" 
+        [removable]="true"
+        (removed)="removeKeyword(i)"
+      >
+        {{keyword}}
+        <button matChipRemove>
+            <mat-icon>cancel</mat-icon>
+        </button>
+      </mat-chip>
+      <input 
+        placeholder="New Keywords..."
+        [matChipInputFor]="keywordList"
+        (matChipInputTokenEnd)="addKeyword($event)"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+    >
+    </mat-chip-list>
+</mat-form-field>

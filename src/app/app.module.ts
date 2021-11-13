@@ -14,7 +14,7 @@ import { BarChartCardComponent } from './components/bar-chart-card/bar-chart-car
 import { TweetsContainerComponent } from './components/tweets-container/tweets-container.component';
 import { TweetCardComponent } from './components/tweet-card/tweet-card.component';
 import { KeywordsContainerComponent } from './components/keywords-container/keywords-container.component';
-import { KeywordsCardComponent } from './components/keywords-card/keywords-card.component';
+import { KeywordsInputComponent } from './components/keywords-input/keywords-input.component';
 import { MenuComponent } from './components/menu/menu.component';
 import {LayoutModule} from '@angular/cdk/layout';
 
@@ -30,7 +30,7 @@ import {LayoutModule} from '@angular/cdk/layout';
     TweetsContainerComponent,
     TweetCardComponent,
     KeywordsContainerComponent,
-    KeywordsCardComponent,
+    KeywordsInputComponent,
     MenuComponent,
   ],
   imports: [
