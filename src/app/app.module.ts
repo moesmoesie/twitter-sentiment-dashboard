@@ -15,6 +15,7 @@ import { TweetsContainerComponent } from './components/tweets-container/tweets-c
 import { TweetCardComponent } from './components/tweet-card/tweet-card.component';
 import { KeywordsContainerComponent } from './components/keywords-container/keywords-container.component';
 import { KeywordsCardComponent } from './components/keywords-card/keywords-card.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { KeywordsCardComponent } from './components/keywords-card/keywords-card.
     TweetCardComponent,
     KeywordsContainerComponent,
     KeywordsCardComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,
