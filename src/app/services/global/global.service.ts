@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class GlobalService {
-  showMenu = false
-  showMenuBreakPoints = [
+  bigMode = false
+  bigModeBreakPoints = [
     Breakpoints.Medium,
     Breakpoints.Large,
     Breakpoints.XLarge
@@ -32,7 +32,7 @@ export class GlobalService {
         Breakpoints.XLarge,
       ])
       .subscribe(result => {
-        this.showMenu = this.checkMediaQuerie(this.showMenuBreakPoints, result.breakpoints);
+        this.bigMode = this.checkMediaQuerie(this.bigModeBreakPoints, result.breakpoints);
       });
   }
 }
