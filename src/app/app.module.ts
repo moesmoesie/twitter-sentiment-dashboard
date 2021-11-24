@@ -12,6 +12,7 @@ import { BarChartCardComponent } from './components/bar-chart-card/bar-chart-car
 import { TweetCardComponent } from './components/tweet-card/tweet-card.component';
 import { KeywordsInputComponent } from './components/keywords-input/keywords-input.component';
 import {LayoutModule} from '@angular/cdk/layout';
+import { SectionHeaderComponent } from './components/section-header/section-header.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {LayoutModule} from '@angular/cdk/layout';
     BarChartCardComponent,
     TweetCardComponent,
     KeywordsInputComponent,
+    SectionHeaderComponent,
   ],
   imports: [
     BrowserModule,
