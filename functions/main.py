@@ -1,20 +1,31 @@
-from models.keyword import Keyword
 import os
 from dotenv import load_dotenv
+from models.keyword import Keyword
 load_dotenv()
 from tweets import TwitterAPI
 
-def main(keywords):
-    keywords = [Keyword(keyword) for keyword in keywords]
+def main(data):
     twitter_api = TwitterAPI(os.environ["TWITTER_BEARER_TOKEN"])
-    data = twitter_api.search("")
+
+    keyword_groups = []
+    for group in data["keyword_groups"]:
+        keywords = []
+        for keyword in group:
+            keywords.append(Keyword(keyword["value"], keyword["isNegated"]))
+        keyword_groups.append(keywords)
+
+    data = twitter_api.search(keyword_groups)
+    return data
 
 if __name__ == "__main__":
-    keywords = [
-        "#Party",
-        "#Fun",
-        "@Jason",
-        "Hello World"
-    ]
-
-    main(keywords)
+    data = {
+        "keyword_groups": [
+            [
+                {"value" : "from:hugodejonge", "isNegated": False},
+                {"value" : "replies", "isNegated": True},
+                {"value" : "Complimenten", "isNegated": False}
+            ]
+        ]
+    }
+    data = main(data)
+    print(data)

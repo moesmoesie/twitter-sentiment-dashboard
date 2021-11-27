@@ -1,12 +1,22 @@
-class Keyword:
+from dataclasses import dataclass
 
-    def __init__(self, keyword_string) -> None:
-        if keyword_string[0] == '@':
-            self.type = "USER"
-            self.value = keyword_string[1:]
-        elif keyword_string[0] == "#":
-            self.type = "HASHTAG"
-            self.value = keyword_string[1:]
+@dataclass
+class Keyword:
+    value: str
+    isNegated: bool
+
+    def get_processed_value(self):
+        new_keyword = "-" if self.isNegated else ""
+
+        if self.value == "replies":
+            new_keyword += "filter:replies"
+        elif self.value.startswith("from:"):
+            new_keyword += self.value.replace(" ", "")
+        elif self.value.startswith("#"):
+            new_keyword += self.value.replace(" ", "")
+        elif self.value.startswith("@"):
+            new_keyword += self.value.replace(" ", "")
         else:
-            self.type = "WORD"
-            self.value = keyword_string
+            new_keyword += f"'{self.value}'"
+
+        return new_keyword
