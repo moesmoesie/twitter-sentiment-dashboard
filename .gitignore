@@ -47,3 +47,8 @@ Thumbs.db
 
 #Firebase 
 .firebase
+
+*.ipynb_checkpoints*
+venv 
+*__pycache__*
+.env
