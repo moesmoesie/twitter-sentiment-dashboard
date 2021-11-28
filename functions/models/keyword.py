@@ -9,7 +9,7 @@ class Keyword:
         new_keyword = "-" if self.isNegated else ""
 
         if self.value == "replies":
-            new_keyword += "filter:replies"
+            new_keyword += "is:reply"
         elif self.value.startswith("from:"):
             new_keyword += self.value.replace(" ", "")
         elif self.value.startswith("#"):

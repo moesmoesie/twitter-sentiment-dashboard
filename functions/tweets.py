@@ -2,8 +2,8 @@ from models.keyword import Keyword
 import requests
 import pandas as pd
 
-SEARCH_URL = "https://api.twitter.com/1.1/search/tweets.json"
-FIELDS = ["full_text","retweet_count","metadata"]
+SEARCH_URL = "https://api.twitter.com/2/tweets/search/recent"
+FIELDS = ["full_text"]
 
 class TwitterAPI():
 
@@ -14,8 +14,6 @@ class TwitterAPI():
 
     def create_params(self,keyword_groups: list[list[Keyword]]):
         query_params = {
-            "lang":"nl", 
-            "tweet_mode": "extended"
         }
 
         query = ""
@@ -30,7 +28,7 @@ class TwitterAPI():
                     query += " "
             query += ")"
 
-        query_params["q"] = query
+        query_params["query"] = query
         return query_params
 
 
@@ -43,11 +41,9 @@ class TwitterAPI():
             raise Exception(response.status_code, response.text)
 
 
-        data: list = response.json()["statuses"]
+        data: list = response.json()["data"]
         if len(data) == 0:
             return False
 
-        df = pd.DataFrame(data, columns=FIELDS)
-        df = pd.concat([df, df["metadata"].apply(pd.Series)], axis=1)
-        df.drop(columns=["metadata","iso_language_code"],inplace=True)
+        df = pd.DataFrame(data)
         return df

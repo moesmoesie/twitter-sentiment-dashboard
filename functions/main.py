@@ -23,9 +23,9 @@ if __name__ == "__main__":
             [
                 {"value" : "from:hugodejonge", "isNegated": False},
                 {"value" : "replies", "isNegated": True},
-                {"value" : "Complimenten", "isNegated": False}
             ]
         ]
     }
+
     data = main(data)
     print(data)
