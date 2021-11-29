@@ -13,6 +13,8 @@ import { TweetCardComponent } from './components/tweet-card/tweet-card.component
 import { KeywordsInputComponent } from './components/keywords-input/keywords-input.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { SectionHeaderComponent } from './components/section-header/section-head
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
     LayoutModule,
   ],
   providers: [],
