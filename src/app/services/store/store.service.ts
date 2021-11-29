@@ -27,6 +27,12 @@ export class StoreService {
   }
 
   get_data(){
+
+    if(this.keywords.length == 0){
+      this.tweet_count = undefined
+      this.tweets = []
+      return;
+    }
  
     var kGroups : Keyword[][] = [[{value:"Covid", isNegated:false}]] 
 
