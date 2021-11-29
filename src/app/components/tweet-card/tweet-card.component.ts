@@ -16,7 +16,8 @@ export class TweetCardComponent implements OnInit {
       reply_count: 23,
       like_count: 20,
       quote_count: 31
-    }
+    },
+    sentiment: "Neutral"
   };
   
   constructor() { }

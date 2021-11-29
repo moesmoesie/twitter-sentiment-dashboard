@@ -7,5 +7,6 @@ export interface Tweet {
         "quote_count": number
     },
     "id": string,
-    "text": string
+    "text": string,
+    "sentiment" : string,
 }

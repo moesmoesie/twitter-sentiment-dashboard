@@ -12,6 +12,11 @@ import { isDevMode } from '@angular/core';
 export class StoreService {
   keywords: Keyword[] = []
   tweet_count : number | undefined = undefined;
+  sentiment_count: {
+    "negatief": number,
+    "neutraal": number,
+    "positief": number
+  } | undefined
   tweets : Tweet[] = []
 
   addKeyword(value: string){
@@ -30,11 +35,12 @@ export class StoreService {
 
     if(this.keywords.length == 0){
       this.tweet_count = undefined
+      this.sentiment_count = undefined
       this.tweets = []
       return;
     }
  
-    var kGroups : Keyword[][] = [[{value:"Covid", isNegated:false}]] 
+    var kGroups : Keyword[][] = [[]] 
 
     this.keywords.forEach((keyword : Keyword)=>{
       kGroups[0].push(keyword)
@@ -50,6 +56,7 @@ export class StoreService {
       .subscribe((response: ApiResponse) => {
         this.tweet_count = response.tweet_count
         this.tweets = response.tweets
+        this.sentiment_count = response.sentiment_count
         console.log(response)
       })
     }

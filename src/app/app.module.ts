@@ -14,6 +14,7 @@ import { KeywordsInputComponent } from './components/keywords-input/keywords-inp
 import {LayoutModule} from '@angular/cdk/layout';
 import { SectionHeaderComponent } from './components/section-header/section-header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MetricSentimentCardComponent } from './components/metric-sentiment-card/metric-sentiment-card.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     TweetCardComponent,
     KeywordsInputComponent,
     SectionHeaderComponent,
+    MetricSentimentCardComponent,
   ],
   imports: [
     BrowserModule,
