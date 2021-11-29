@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { MetricCardComponent } from './metric-card.component';
+import { MetricCardComponent } from './metric-total-tweets-card.component';
 
 describe('MetricCardComponent', () => {
   let component: MetricCardComponent;

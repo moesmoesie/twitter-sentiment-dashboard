@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { MetricCardComponent } from './components/metric-card/metric-card.component';
+import { MetricCardComponent } from './components/metric-total-tweets-card/metric-total-tweets-card.component';
 import { LineChartCardComponent } from './components/line-chart-card/line-chart-card.component';
 import { BarChartCardComponent } from './components/bar-chart-card/bar-chart-card.component';
 import { TweetCardComponent } from './components/tweet-card/tweet-card.component';
