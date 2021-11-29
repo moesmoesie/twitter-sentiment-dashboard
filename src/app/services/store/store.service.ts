@@ -12,7 +12,7 @@ import { isDevMode } from '@angular/core';
 export class StoreService {
   keywords: Keyword[] = []
   tweet_count : number | undefined = undefined;
-  tweets : Tweet[] | undefined = undefined;
+  tweets : Tweet[] = []
 
   addKeyword(value: string){
     this.keywords.push({value: value, isNegated: false})

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GlobalService } from 'src/app/services/global/global.service';
+import { StoreService } from 'src/app/services/store/store.service';
 
 @Component({
   selector: 'dashboard',
@@ -8,7 +9,9 @@ import { GlobalService } from 'src/app/services/global/global.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(public global : GlobalService) { }
+  constructor(
+    public store : StoreService,
+    public global : GlobalService) { }
 
   ngOnInit(): void {
   }

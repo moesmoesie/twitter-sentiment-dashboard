@@ -33,11 +33,9 @@
     <div>
         <section-header value="Tweets"></section-header>
         <div class="tweet-c">
-            <tweet-card></tweet-card>
-            <tweet-card></tweet-card>
-            <tweet-card></tweet-card>
-            <tweet-card></tweet-card>
-            <tweet-card></tweet-card>
+            <tweet-card *ngFor="let tweet of store.tweets"
+            [tweet]="tweet"
+            ></tweet-card>
         </div>
     </div>
 </div>
