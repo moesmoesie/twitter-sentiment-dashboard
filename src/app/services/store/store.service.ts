@@ -50,7 +50,7 @@ export class StoreService {
         "k_groups": kGroups
     }
 
-    const url = isDevMode() ? "http://192.168.2.15:8080/" : "https://twitter-sentiment-api-zrldtrrrqa-ez.a.run.app"
+    const url = isDevMode() ? "http://192.168.2.10:8080/" : "https://twitter-sentiment-api-zrldtrrrqa-ez.a.run.app"
 
     this.http.post<ApiResponse>(url, data)
       .subscribe((response: ApiResponse) => {

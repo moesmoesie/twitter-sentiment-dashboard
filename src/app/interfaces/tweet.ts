@@ -9,4 +9,5 @@ export interface Tweet {
     "id": string,
     "text": string,
     "sentiment" : string,
+    "hashtags": string[]
 }
