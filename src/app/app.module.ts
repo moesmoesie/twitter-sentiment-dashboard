@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material.module';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MetricCardComponent } from './components/metric-total-tweets-card/metric-total-tweets-card.component';
 import { LineChartCardComponent } from './components/line-chart-card/line-chart-card.component';
 import { BarChartCardComponent } from './components/bar-chart-card/bar-chart-card.component';
@@ -20,7 +19,6 @@ import { MetricSentimentCardComponent } from './components/metric-sentiment-card
 @NgModule({
   declarations: [
     AppComponent,
-    DashboardComponent,
     MetricCardComponent,
     LineChartCardComponent,
     BarChartCardComponent,
