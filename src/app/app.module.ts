@@ -11,6 +11,8 @@ import { LandingSectionComponent } from './components/landing-section/landing-se
 import {MatButtonModule} from '@angular/material/button';
 import { KeywordSectionComponent } from './components/keyword-section/keyword-section.component';
 import { MetricsSectionComponent } from './metrics-section/metrics-section.component';
+import { TweetsSectionComponent } from './components/tweets-section/tweets-section.component'; 
+import { TweetCardComponent } from './components/tweet-card/tweet-card.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { MetricsSectionComponent } from './metrics-section/metrics-section.compo
     LandingSectionComponent,
     KeywordSectionComponent,
     MetricsSectionComponent,
+    TweetsSectionComponent,
+    TweetCardComponent,
   ],
   imports: [
     BrowserModule,
