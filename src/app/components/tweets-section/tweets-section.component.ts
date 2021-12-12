@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StoreService } from 'src/app/services/store/store.service';
 
 @Component({
   selector: 'tweets-section',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TweetsSectionComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    public store : StoreService
+  ) { }
 
   ngOnInit(): void {
   }

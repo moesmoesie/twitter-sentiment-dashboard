@@ -9,22 +9,21 @@
         <div class="w-1 h-1 bg-white ml-2 rounded-full"></div>
         <p class="m-0 p-0 text-white ml-2">14s</p>
     </div>
-    <img class="w-8 " src="/assets/happy-white.svg" />
+    <img class="w-8 " src="/assets/{{get_sentiment_asset(tweet.sentiment)}}" />
 </div>
 
 <div class="mx-6 py-5 border-b border-gray-100 font-light" >
     <p class="m-0 p-0 text-xl text-gray-800">
-        This is a tweet. It can be long, or short.
-        Depends on what you have to say. It can have some hashtags too. 
+        {{tweet.text}}
         <span class="text-blue-400">#likethis</span>
     </p>
 </div>
 
 <div class="mx-6 py-4 flex gap-4 font-light" >
     <p class="m-0 p-0  text-gray-800">
-        <span class="font-bold">372</span> Retweets
+        <span class="font-bold">{{tweet.public_metrics.retweet_count}}</span> Retweets
     </p>
     <p class="m-0 p-0 text-gray-800">
-        <span class="font-bold">372</span> Likes
+        <span class="font-bold">{{tweet.public_metrics.like_count}}</span> Likes
     </p>
 </div>
