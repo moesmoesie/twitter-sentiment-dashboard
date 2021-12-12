@@ -1,7 +1,9 @@
 <div class="max-w-5xl mx-auto px-12 pt-12 overflow-hidden">
   <landing-section></landing-section>
   <keyword-section></keyword-section>
-  <metrics-section></metrics-section>
-  <charts-section></charts-section>
-  <tweets-section></tweets-section>
+  <div *ngIf="store.tweet_count != undefined">
+    <metrics-section></metrics-section>
+    <charts-section></charts-section>
+    <tweets-section></tweets-section>
+  </div>
 </div>
