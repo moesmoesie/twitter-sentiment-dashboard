@@ -9,6 +9,7 @@ import {LayoutModule} from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { LandingSectionComponent } from './components/landing-section/landing-section.component';
 import {MatButtonModule} from '@angular/material/button';
+import { KeywordSectionComponent } from './components/keyword-section/keyword-section.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import {MatButtonModule} from '@angular/material/button';
     AppComponent,
     KeywordsInputComponent,
     LandingSectionComponent,
+    KeywordSectionComponent,
   ],
   imports: [
     BrowserModule,
