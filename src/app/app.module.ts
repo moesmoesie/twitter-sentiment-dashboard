@@ -7,16 +7,20 @@ import { MaterialModule } from './modules/material.module';
 import { KeywordsInputComponent } from './components/keywords-input/keywords-input.component';
 import {LayoutModule} from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingSectionComponent } from './components/landing-section/landing-section.component';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     KeywordsInputComponent,
+    LandingSectionComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    MatButtonModule,
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
