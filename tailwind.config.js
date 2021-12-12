@@ -1,7 +1,13 @@
 module.exports = {
-  purge: [],
+  purge: {
+    enabled: true,
+    content: [
+      './src/**/*.{html,ts,css}',
+    ]
+  },
   darkMode: false, // or 'media' or 'class'
   important: true,
+  jit: true,
   theme: {
     extend: {
       colors: {
