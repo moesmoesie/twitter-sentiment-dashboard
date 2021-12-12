@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LandingSectionComponent } from './components/landing-section/landing-section.component';
 import {MatButtonModule} from '@angular/material/button';
 import { KeywordSectionComponent } from './components/keyword-section/keyword-section.component';
+import { MetricsSectionComponent } from './metrics-section/metrics-section.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { KeywordSectionComponent } from './components/keyword-section/keyword-se
     KeywordsInputComponent,
     LandingSectionComponent,
     KeywordSectionComponent,
+    MetricsSectionComponent,
   ],
   imports: [
     BrowserModule,
