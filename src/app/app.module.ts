@@ -13,17 +13,21 @@ import { KeywordSectionComponent } from './components/keyword-section/keyword-se
 import { MetricsSectionComponent } from './metrics-section/metrics-section.component';
 import { TweetsSectionComponent } from './components/tweets-section/tweets-section.component'; 
 import { TweetCardComponent } from './components/tweet-card/tweet-card.component';
-
+import { NgChartsModule } from 'ng2-charts';
+import { BarChartComponent } from './components/bar-chart/bar-chart.component';
+import { ChartsSectionComponent } from './components/charts-section/charts-section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     KeywordsInputComponent,
+    BarChartComponent,
     LandingSectionComponent,
     KeywordSectionComponent,
     MetricsSectionComponent,
     TweetsSectionComponent,
     TweetCardComponent,
+    ChartsSectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +37,7 @@ import { TweetCardComponent } from './components/tweet-card/tweet-card.component
     MaterialModule,
     HttpClientModule,
     LayoutModule,
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
