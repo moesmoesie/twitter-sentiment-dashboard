@@ -8,4 +8,5 @@ export interface ApiResponse {
         "positief": number
     },
     "tweets": Tweet[]
+    "hashtag_count" : {string: number}
 }

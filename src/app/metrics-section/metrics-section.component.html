@@ -4,7 +4,7 @@
         <div class="mt-4 border-b border-primary1">
             <p class="text-2xl">
                 <span class="font-thin" >Total Tweets: </span>
-                <span class="font-bold text-primary1">2057</span>
+                <span class="font-bold text-primary1">{{this.get_total_tweets()}}</span>
             </p>
         </div>
 
@@ -12,28 +12,32 @@
             <div class=" flex-1 mt-3 grid grid-cols-5 grid-rows-2">
                 <div class="row-span-2 col-span-2" >
                     <div class="flex items-center gap-2">
-                        <img class="w-12 h-12" src="/assets/happy.svg" alt="">
-                        <p class="p-0 m-0 text-4xl font-bold text-primary1">47%</p>
+                        <img class="w-12 h-12" src="/assets/{{get_sentiment_data()[0][2]}}.svg" alt="">
+                        <p class="p-0 m-0 text-4xl font-bold text-primary1">
+                            {{get_sentiment_data()[0][1]}}%
+                        </p>
                     </div>
-                    <p class="text-3xl mt-2 font-thin" >Positive</p>
+                    <p class="text-3xl mt-2 font-thin" >
+                        {{get_sentiment_data()[0][0]}}
+                    </p>
                 </div>
 
                 <div class="col-span-3 row-span-1 mt-2" >
                     <div class="flex items-center gap-2">
-                        <img class="w-8 h-8 mr-3" src="/assets/happy.svg" alt="">
+                        <img class="w-8 h-8 mr-3" src="/assets/{{get_sentiment_data()[1][2]}}.svg" alt="">
                         <p class="text-xl p-0 m-0 font-thin" >
-                            <span class="font-medium">17%</span>
-                            Negative
+                            <span class="font-medium">{{get_sentiment_data()[1][1]}}%</span>
+                            {{get_sentiment_data()[1][0]}}
                         </p>
                     </div>
                 </div>
 
                 <div class="col-span-3 row-span-1" >
                     <div class="flex items-center gap-2">
-                        <img class="w-8 h-8 mr-3" src="/assets/happy.svg" alt="">
+                        <img class="w-8 h-8 mr-3" src="/assets/{{get_sentiment_data()[2][2]}}.svg" alt="">
                         <p class="text-xl p-0 m-0 font-thin" >
-                            <span class="font-medium">27% </span>
-                            Neutral
+                            <span class="font-medium">{{get_sentiment_data()[2][1]}}%</span>
+                            {{get_sentiment_data()[2][0]}}
                         </p>
                     </div>
 
@@ -41,18 +45,17 @@
             </div>
 
             <div class="flex-1 flex flex-col border-l border-primary1">
-                <div class="flex border-b border-gray-100 py-2 mx-2" *ngFor="let val of [1,2,3]" 
-                    [ngClass]="{'border-b border-gray-100' : val != 3}"
+                <div class="flex border-b border-gray-100 py-2 mx-2" *ngFor="let val of get_hashtag_data()" 
                 >
                     <p class="flex-1 ml-6 my-0 text-primary1 font-bold ">
-                        #oprutten
+                        #{{val[0]}}
                     </p>
                     <p class="flex-1 my-0">
-                        <span class="font-bold">123 </span>
+                        <span class="font-bold">{{val[1]}} </span>
                         <span>Tweets</span>
                     </p>
                     <p class="flex-1 my-0">
-                        <span class="font-bold">35% </span>
+                        <span class="font-bold">{{ getPercentage(val[1])}}% </span>
                         <span>Occurances</span>
                     </p>
                 </div>

@@ -18,6 +18,7 @@ export class StoreService {
     "positief": number
   } | undefined
   tweets : Tweet[] = []
+  hashtags : {string: number} | undefined;
 
   addKeyword(value: string){
     this.keywords.push({value: value, isNegated: false})
@@ -57,7 +58,7 @@ export class StoreService {
         this.tweet_count = response.tweet_count
         this.tweets = response.tweets
         this.sentiment_count = response.sentiment_count
-        console.log(response)
+        this.hashtags = response.hashtag_count
       })
     }
 
