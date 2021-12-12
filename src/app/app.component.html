@@ -118,30 +118,10 @@
       </div>
   </div>
  
-  <div class="graphs-c mt-16" [class.graphs-c--large]="global.bigMode">
-      <div>
-          <section-header value="Line Chart"></section-header>
-          <line-chart-card></line-chart-card>
-      </div>
-  
-      <div>
-          <section-header value="Bar Chart"></section-header>
-          <bar-chart-card></bar-chart-card>
-      </div>
-  </div>
-
-  <div>
-      <section-header value="Tweets"></section-header>
-      <div class="tweet-c">
-          <tweet-card *ngFor="let tweet of store.tweets"
-          [tweet]="tweet"
-          ></tweet-card>
-      </div>
-  </div>
-
-  </div>
 
 
+
+</div>
   <div class="flex justify-between transform translate-y-1/2">
     <div class="relative">
       <div style="z-index: -1;" class="absolute top-1/2 opacity-10 left-1/2 transform scale-150 -translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-primary1">
