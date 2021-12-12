@@ -18,7 +18,11 @@ export class TweetCardComponent implements OnInit {
       reply_count: 0
     },
     sentiment: "",
-    text: ""
+    text: "",
+    name: "",
+    username: "",
+    profile_image_url: "",
+    verified: false
   }; // decorate the property with @Input()
 
 

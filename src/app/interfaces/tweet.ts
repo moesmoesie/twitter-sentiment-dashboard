@@ -9,5 +9,9 @@ export interface Tweet {
     "id": string,
     "text": string,
     "sentiment" : string,
-    "hashtags": string[]
+    "hashtags": string[],
+    "name": string,
+    "username": string,
+    "profile_image_url": string,
+    "verified": boolean
 }
