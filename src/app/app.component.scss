@@ -47,3 +47,7 @@
   display: grid;
   gap: 2rem;
 }
+
+.mat-progress-spinner circle, .mat-spinner circle {
+  stroke: #3fb53f;
+}

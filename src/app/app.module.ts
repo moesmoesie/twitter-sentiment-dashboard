@@ -16,6 +16,7 @@ import { TweetCardComponent } from './components/tweet-card/tweet-card.component
 import { NgChartsModule } from 'ng2-charts';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { ChartsSectionComponent } from './components/charts-section/charts-section.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { ChartsSectionComponent } from './components/charts-section/charts-secti
     AppRoutingModule,
     MatButtonModule,
     BrowserAnimationsModule,
+    MatProgressSpinnerModule,
     MaterialModule,
     HttpClientModule,
     LayoutModule,

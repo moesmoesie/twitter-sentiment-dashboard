@@ -6,4 +6,10 @@
     <charts-section></charts-section>
     <tweets-section></tweets-section>
   </div>
+
+  <div class="loader w-full flex justify-center mt-4 mb-4" [ngClass]="{
+    'opacity-0': !store.isLoading
+  }">
+      <mat-spinner diameter="50"></mat-spinner>
+  </div>
 </div>

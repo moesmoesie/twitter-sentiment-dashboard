@@ -2,6 +2,7 @@
     <mat-label>Select Keywords</mat-label>
     <mat-chip-list #keywordList aria-label="Fruit selection">
       <mat-chip *ngFor="let keyword of store.keywords let i = index" 
+        class="group2-chip"
         [attr.data-index]="i" 
         [removable]="true"
         (removed)="store.removeKeyword(i)"

@@ -19,7 +19,7 @@ export class StoreService {
   } | undefined
   tweets : Tweet[] = []
   hashtags : {string: number} | undefined;
-
+  isLoading = false
   addKeyword(value: string){
     this.keywords.push({value: value, isNegated: false})
     this.get_data()
@@ -33,13 +33,15 @@ export class StoreService {
   }
 
   get_data(){
-
     if(this.keywords.length == 0){
       this.tweet_count = undefined
       this.sentiment_count = undefined
       this.tweets = []
       return;
     }
+
+    this.isLoading = true
+
  
     var kGroups : Keyword[][] = [[]] 
 
@@ -59,6 +61,7 @@ export class StoreService {
         this.tweets = response.tweets
         this.sentiment_count = response.sentiment_count
         this.hashtags = response.hashtag_count
+        this.isLoading = false
       })
     }
 
