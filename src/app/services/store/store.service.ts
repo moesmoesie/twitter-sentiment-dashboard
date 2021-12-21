@@ -4,7 +4,7 @@ import { ApiResponse } from 'src/app/interfaces/api_response';
 import { Tweet } from 'src/app/interfaces/tweet';
 import { Keyword } from 'src/app/interfaces/keyword';
 import { ApiPayload } from 'src/app/interfaces/api_payload';
-import { isDevMode } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -53,8 +53,8 @@ export class StoreService {
         "k_groups": kGroups
     }
 
-    const url = isDevMode() ? "http://192.168.2.10:8080/" : "https://twitter-sentiment-api-zrldtrrrqa-ez.a.run.app"
-
+    const url = environment.host
+    
     this.http.post<ApiResponse>(url, data)
       .subscribe((response: ApiResponse) => {
         this.tweet_count = response.tweet_count
