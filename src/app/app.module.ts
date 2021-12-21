@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LandingSectionComponent } from './components/landing-section/landing-section.component';
 import {MatButtonModule} from '@angular/material/button';
 import { KeywordSectionComponent } from './components/keyword-section/keyword-section.component';
-import { MetricsSectionComponent } from './metrics-section/metrics-section.component';
+import { MetricsSectionComponent } from './components/metrics-section/metrics-section.component';
 import { TweetsSectionComponent } from './components/tweets-section/tweets-section.component'; 
 import { TweetCardComponent } from './components/tweet-card/tweet-card.component';
 import { NgChartsModule } from 'ng2-charts';

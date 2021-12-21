@@ -47,9 +47,12 @@
             <div class="flex-1 flex flex-col border-l border-primary1">
                 <div class="flex border-b border-gray-100 py-2 mx-2" *ngFor="let val of get_hashtag_data()" 
                 >
-                    <p class="flex-1 ml-6 my-0 text-primary1 font-bold ">
-                        #{{val[0]}}
-                    </p>
+                    <div class="flex-1 ml-6 overflow-hidden">
+                        <p style="max-width: 80%; text-overflow: ellipsis; " class="my-0 whitespace-nowrap overflow-hidden text-primary1 font-bold ">
+                            #{{val[0]}}
+                        </p>
+                    </div>
+                   
                     <p class="flex-1 my-0">
                         <span class="font-bold">{{val[1]}} </span>
                         <span>Tweets</span>

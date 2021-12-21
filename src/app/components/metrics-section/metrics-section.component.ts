@@ -1,5 +1,5 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
-import { StoreService } from '../services/store/store.service';
+import { StoreService } from '../../services/store/store.service';
 
 @Component({
   selector: 'metrics-section',
