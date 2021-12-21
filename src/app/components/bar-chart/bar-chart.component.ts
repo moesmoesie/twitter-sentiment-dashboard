@@ -10,6 +10,7 @@ import { StoreService } from 'src/app/services/store/store.service';
 export class BarChartComponent implements OnInit {
   public barChartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     animation: {
       duration: 0
     },
@@ -18,12 +19,12 @@ export class BarChartComponent implements OnInit {
         display: false,
         position: 'bottom',
         title: {
-          text:""
+          text: ""
         }
       },
-      title:{
+      title: {
         display: true,
-        text: 'Sentiment per Hashtag'
+        text: 'Tweets per Sentiments'
       }
     }
   };
@@ -34,8 +35,8 @@ export class BarChartComponent implements OnInit {
 
 
 
-  get_data(): ChartDataset[]{
-    if(!this.store.sentiment_count) return []
+  get_data(): ChartDataset[] {
+    if (!this.store.sentiment_count) return []
     return [
       {
         data: [
@@ -43,8 +44,14 @@ export class BarChartComponent implements OnInit {
           this.store.sentiment_count?.neutraal,
           this.store.sentiment_count?.negatief,
         ],
-        label: "Amount", 
+        label: "Amount",
         backgroundColor: [
+          '#cbb6f0',
+          '#7F39FB',
+          '#23036A'
+        ],
+
+        hoverBackgroundColor: [
           '#cbb6f0',
           '#7F39FB',
           '#23036A'
@@ -54,7 +61,7 @@ export class BarChartComponent implements OnInit {
   }
 
   constructor(
-    public store : StoreService
+    public store: StoreService
   ) { }
 
   ngOnInit(): void {
