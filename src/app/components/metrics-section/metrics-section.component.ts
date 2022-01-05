@@ -36,10 +36,22 @@ export class MetricsSectionComponent implements OnInit {
 
   get_sentiment_data(){
     if(this.store.sentiment_count && this.store.tweet_count){
+
+      const posCount = this.store.sentiment_count.positief ?? 0
+      const negCount = this.store.sentiment_count.negatief ?? 0
+      const neutrCount = this.store.sentiment_count.neutraal ?? 0
+
+
+      const posPercentage = posCount == 0 ? 0 :  Math.round(posCount / this.store.tweet_count * 100)
+      const negPercentage = negCount == 0 ? 0 : Math.round(negCount / this.store.tweet_count * 100)
+      const neutralPercentage = neutrCount == 0 ? 0 : Math.round(neutrCount / this.store.tweet_count * 100)
+      
+   
+
       var data : [string, number,number,string][]  = [
-        ["Positive", Math.round(this.store.sentiment_count.positief / this.store.tweet_count * 100),this.store.sentiment_count.positief, "happy"],
-        ["Neutral",Math.round(this.store.sentiment_count.neutraal / this.store.tweet_count * 100),this.store.sentiment_count.neutraal,"neutral"],
-        ["Negative",Math.round(this.store.sentiment_count.negatief / this.store.tweet_count * 100),this.store.sentiment_count.negatief,"sad"]
+        ["Positive", posPercentage,posCount, "happy"],
+        ["Neutral", neutralPercentage,neutrCount,"neutral"],
+        ["Negative", negPercentage ,negCount,"sad"]
       ]
 
       data.sort((a,b) => {
