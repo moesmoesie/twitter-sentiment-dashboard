@@ -13,7 +13,7 @@
             <div class="flex py-2 items-center"
             *ngFor="let val of get_sentiment_data(); let i = index">
                 <div class="flex-1 md:ml-6 overflow-hidden flex items-center gap-2">
-                    <img class="w-5 md:w-8" src="/assets/happy.svg" />
+                    <img class="w-5 md:w-8" src="/assets/{{val[3]}}.svg" />
                     <p style="max-width: 80%; text-overflow: ellipsis; "
                         class="my-0 whitespace-nowrap overflow-hidden text-sm md:text-xl text-primary1 font-bold ">
                         {{val[0]}}

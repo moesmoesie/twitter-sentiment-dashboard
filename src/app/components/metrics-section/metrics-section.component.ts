@@ -38,8 +38,8 @@ export class MetricsSectionComponent implements OnInit {
     if(this.store.sentiment_count && this.store.tweet_count){
       var data : [string, number,number,string][]  = [
         ["Positive", Math.round(this.store.sentiment_count.positief / this.store.tweet_count * 100),this.store.sentiment_count.positief, "happy"],
-        ["Neutral",Math.round(this.store.sentiment_count.neutraal / this.store.tweet_count * 100),this.store.sentiment_count.neutraal,"happy"],
-        ["Negative",Math.round(this.store.sentiment_count.negatief / this.store.tweet_count * 100),this.store.sentiment_count.negatief,"happy"]
+        ["Neutral",Math.round(this.store.sentiment_count.neutraal / this.store.tweet_count * 100),this.store.sentiment_count.neutraal,"neutral"],
+        ["Negative",Math.round(this.store.sentiment_count.negatief / this.store.tweet_count * 100),this.store.sentiment_count.negatief,"sad"]
       ]
 
       data.sort((a,b) => {
