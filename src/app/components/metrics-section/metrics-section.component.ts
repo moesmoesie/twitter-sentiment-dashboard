@@ -24,7 +24,7 @@ export class MetricsSectionComponent implements OnInit {
         return b[1] - a[1]
       })
     }
-    return arr.slice(0,3)
+    return arr.slice(0,5)
   }
 
   getPercentage(value : number){
@@ -36,10 +36,10 @@ export class MetricsSectionComponent implements OnInit {
 
   get_sentiment_data(){
     if(this.store.sentiment_count && this.store.tweet_count){
-      var data : [string, number,string][]  = [
-        ["Positive", Math.round(this.store.sentiment_count.positief / this.store.tweet_count * 100),"happy"],
-        ["Neutral",Math.round(this.store.sentiment_count.neutraal / this.store.tweet_count * 100),"happy"],
-        ["Negative",Math.round(this.store.sentiment_count.negatief / this.store.tweet_count * 100),"happy"]
+      var data : [string, number,number,string][]  = [
+        ["Positive", Math.round(this.store.sentiment_count.positief / this.store.tweet_count * 100),this.store.sentiment_count.positief, "happy"],
+        ["Neutral",Math.round(this.store.sentiment_count.neutraal / this.store.tweet_count * 100),this.store.sentiment_count.neutraal,"happy"],
+        ["Negative",Math.round(this.store.sentiment_count.negatief / this.store.tweet_count * 100),this.store.sentiment_count.negatief,"happy"]
       ]
 
       data.sort((a,b) => {
@@ -49,9 +49,9 @@ export class MetricsSectionComponent implements OnInit {
       return data
     }
     return [
-      ["Positive", 0, "happy"], 
-      ["Negative", 0, "happy"], 
-      ["Neutral", 0, "happy"]
+      ["Positive", 0,0, "happy"], 
+      ["Negative", 0,0, "happy"], 
+      ["Neutral", 0,0, "happy"]
     ]
   }
 
