@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LandingSectionComponent implements OnInit {
   subTitleText = "Human Computer Interaction"
   headerText = "Twitter Sentiment Dashboard"
-  bodyText = "Lorem ipsum dolor sit amet consectetur, adipisicing elit.Voluptates ut amet, magni nihil totam beatae autem asperiores, cumque nam assumenda qui aperiam commodi culpaillo minima unde tempore, esse earum?"
+  bodyText = "Explore the internets view by at-a-glance positive/neutral/negative tweet sentiment analysis, filter data with custom search operations, and export your newly found insights to a local csv file."
 
 
   constructor() { }
