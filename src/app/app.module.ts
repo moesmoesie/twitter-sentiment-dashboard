@@ -19,6 +19,7 @@ import { ChartsSectionComponent } from './components/charts-section/charts-secti
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { InstructionsDialogComponent } from './components/instructions-dialog/instructions-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {MatDialogModule} from '@angular/material/dialog';
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
+    MatTooltipModule,
     MatDialogModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,

@@ -5,15 +5,23 @@
         <h1 class="text-primary2 font-black text-4xl md:text-5xl mb-6">{{headerText}}</h1>
         <p class="max-w-prose text-baseTextColor mb-8">{{bodyText}}</p>
         <div class="flex gap-4">
-            <button (click)="donwloadData()" class="bg-primary1 text-white" mat-flat-button>Export Data</button>
-            <button (click)="openDialog()"class="border-primary1" mat-stroked-button>Instructions</button>
+            <button [matTooltip]="store.tweet_count == undefined
+                ? 'There is no data to export!' 
+                : ''" matTooltipPosition="below" matTooltipHideDelay="500"
+                [ngClass]="{'opacity-40 cursor-default' :  store.tweet_count == undefined}"
+                class="bg-primary1 text-white relative" mat-flat-button (click)="donwloadData()">
+                Export Data
+            </button>
+
+            <button (click)="openDialog()" class="border-primary1" mat-stroked-button>Instructions</button>
         </div>
     </div>
 
-    <div class="absolute opacity-40 transition-all lg:opacity-100 top-1/2 right-0 z-0 transform -translate-y-1/2 hidden md:block">
+    <div
+        class="absolute opacity-40 transition-all lg:opacity-100 top-1/2 right-0 z-0 transform -translate-y-1/2 hidden md:block">
         <div style="z-index: -1;"
             class="absolute top-1/2 opacity-10 left-1/2 transform scale-125 -translate-x-1/2 -translate-y-1/2 rounded-full w-96 h-96 bg-primary1">
         </div>
         <img src="/assets/artwork1.svg" alt="Tweets Artwork" />
-    </div> 
+    </div>
 </div>
