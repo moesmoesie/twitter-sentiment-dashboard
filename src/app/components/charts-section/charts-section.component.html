@@ -3,7 +3,7 @@
         Charts
     </h2>
 
-    <mat-form-field *ngIf="store.hashtags" appearance="fill">
+    <mat-form-field *ngIf="gethashtag().length > 0" appearance="fill">
         <mat-label>Filter Hashtag</mat-label>
         <mat-select (selectionChange)="changeClient($event.value)">
             <mat-option *ngFor="let element of  gethashtag()" [value]="element != 'Clear' ? element : null"
