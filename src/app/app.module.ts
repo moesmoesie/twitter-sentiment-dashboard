@@ -17,6 +17,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { BarChartComponent } from './components/bar-chart/bar-chart.component';
 import { ChartsSectionComponent } from './components/charts-section/charts-section.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { InstructionsDialogComponent } from './components/instructions-dialog/instructions-dialog.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -29,11 +31,13 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     TweetsSectionComponent,
     TweetCardComponent,
     ChartsSectionComponent,
+    InstructionsDialogComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
+    MatDialogModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     MaterialModule,

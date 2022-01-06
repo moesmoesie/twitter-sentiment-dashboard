@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { StoreService } from 'src/app/services/store/store.service';
+import { InstructionsDialogComponent } from '../instructions-dialog/instructions-dialog.component';
 
 @Component({
   selector: 'landing-section',
@@ -32,9 +34,30 @@ export class LandingSectionComponent implements OnInit {
     CsvDataService.exportToCsv("TweetSentimentData.csv",filteredData);
   }
 
+  openDialog() {
+    if(this.store.tweet_count == 0){
+      return;
+    }
+
+    const dialogRef = this.dialog.open(InstructionsDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
+  openInstructionsDialog() {
+    const dialogRef = this.dialog.open(InstructionsDialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 
   constructor(
-    public store: StoreService
+    public store: StoreService,
+    public dialog: MatDialog,
   ) { }
 
   ngOnInit(): void {
