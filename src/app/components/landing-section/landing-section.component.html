@@ -5,7 +5,7 @@
         <h1 class="text-primary2 font-black text-4xl md:text-5xl mb-6">{{headerText}}</h1>
         <p class="max-w-prose text-baseTextColor mb-8">{{bodyText}}</p>
         <div class="flex gap-4">
-            <button class="bg-primary1 text-white" mat-flat-button>Export Data</button>
+            <button (click)="donwloadData()" class="bg-primary1 text-white" mat-flat-button>Export Data</button>
             <button class="border-primary1" mat-stroked-button>Instructions</button>
         </div>
     </div>
