@@ -1,6 +1,20 @@
-<h2 class="text-2xl font-bold text-primary2 ">
-    Charts
-</h2>
+<div class="flex justify-between">
+    <h2 class="text-2xl font-bold text-primary2">
+        Charts
+    </h2>
+
+    <mat-form-field *ngIf="store.hashtags" appearance="fill">
+        <mat-label>Filter Hashtag</mat-label>
+        <mat-select (selectionChange)="changeClient($event.value)">
+            <mat-option *ngFor="let element of  gethashtag()" [value]="element != 'Clear' ? element : null"
+                [ngClass]="{'font-bold' : element == 'Clear'}">
+                {{element}}
+            </mat-option>
+        </mat-select>
+    </mat-form-field>
+</div>
+
+
 <div class="mb-12">
-    <bar-chart></bar-chart>
+    <bar-chart [tweets]="filtereddata"></bar-chart>
 </div>

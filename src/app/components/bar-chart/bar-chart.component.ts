@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { ChartOptions, ChartType, ChartDataset } from 'chart.js';
+import { Tweet } from 'src/app/interfaces/tweet';
 import { StoreService } from 'src/app/services/store/store.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { StoreService } from 'src/app/services/store/store.service';
   styleUrls: ['./bar-chart.component.scss']
 })
 export class BarChartComponent implements OnInit {
+  @Input() tweets : Tweet[] = [];
+
   public barChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -28,21 +31,34 @@ export class BarChartComponent implements OnInit {
       }
     }
   };
+
   public barChartLabels: string[] = ['Positive', 'Neutral', 'Negative'];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [];
 
-
-
   get_data(): ChartDataset[] {
-    if (!this.store.sentiment_count) return []
+    if (this.tweets.length == 0) return []
+    var posCount = 0
+    var neutraal = 0
+    var negatief = 0
+
+    this.tweets.forEach((element) => {
+      if(element.sentiment == "positief"){
+        posCount++
+      }else if(element.sentiment == "negatief"){
+        negatief++
+      }else{
+        neutraal++
+      }
+    })
+
     return [
       {
         data: [
-          this.store.sentiment_count?.positief,
-          this.store.sentiment_count?.neutraal,
-          this.store.sentiment_count?.negatief,
+          posCount,
+          neutraal,
+          negatief,
         ],
         label: "Amount",
         backgroundColor: [
@@ -66,5 +82,4 @@ export class BarChartComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

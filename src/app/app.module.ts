@@ -20,6 +20,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { InstructionsDialogComponent } from './components/instructions-dialog/instructions-dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AppRoutingModule,
     MatButtonModule,
     MatTooltipModule,
+    MatSelectModule,
     MatDialogModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
